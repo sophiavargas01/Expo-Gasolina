@@ -7,7 +7,7 @@ export default function App() {
   const [kmrodado, setKmrodado] = useState('');
   const [resultado, setResultado] = useState('');
 
-  const valorLitro = 5.52; // Valor fixo em R$5.52
+  const valorLitro = 5.63; 
 
   const calcular = () => {
     if (quantidade === '' || kmrodado === '') {
@@ -23,7 +23,7 @@ export default function App() {
       return;
     }
 
-    const consumo = km / (quant * valorLitro); // Calcula o consumo em km/l
+    const consumo = km / (quant * valorLitro);
     setResultado(consumo.toFixed(2));
   };
 
@@ -37,8 +37,10 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.content}>
         <View>
-          <Text style={styles.title}>Valor do litro (R$5.52)</Text>
+          <Text style={styles.title}>Valor do litro: R$5.63</Text>
         </View>
+        <Text></Text>
+        <Text></Text>
         <View>
           <Text>Quantidade Abastecida</Text>
           <View style={styles.input}>
@@ -61,11 +63,13 @@ export default function App() {
             />
           </View>
         </View>
+        <Text></Text>
         <View style={{ justifyContent: 'center', alignItems: 'center' }}>
           <Pressable style={styles.pressable} onPress={calcular}>
             <Text style={styles.resultado}>Calcular</Text>
           </Pressable>
         </View>
+        <Text></Text>
         <View>
           <Text style={styles.title}>{`Resultado: ${resultado} km/Litro`}</Text>
         </View>
@@ -105,7 +109,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   pressable: {
-    backgroundColor: '#86ee86',
+    backgroundColor: '#00CED1',
     borderRadius: 5,
     padding: 10,
     alignItems: 'center',
